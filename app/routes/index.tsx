@@ -1,3 +1,10 @@
+import { Count } from "~/components/count";
+import { DecrementButton } from "~/components/decrement";
+import { IncrementButton } from "~/components/increment";
+import { countState } from "~/lib/counter-state";
+
+const state = countState()
+
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
@@ -27,6 +34,12 @@ export default function Index() {
           </a>
         </li>
       </ul>
+
+
+      <Count count={state.count} />
+      <IncrementButton fn={state.increment}  />
+      <DecrementButton fn={state.decrement} />
+
     </div>
   );
 }
